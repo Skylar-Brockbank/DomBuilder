@@ -18,59 +18,62 @@ A javascript module that allows you to create DOM elements from a JSON object
 ```
 import DomBuilder from "./DomBuilder.js";
 
-const domData=[
-  {
-    element:'div',
-    id:'test',
-    properties:[],
-    children:[
-      {
-        element:'form',
-        id:'testForm',
-        properties:[],
-        children:[
-          {
-            element:'label',
-            id:'textLabel',
-            properties:[
-              {
-                key:'for',
-                value:'textInput'
-              }
-            ],
-            children:[]
-          },
-          {
-            element:'input',
-            id:'formText',
-            properties:[
-              {
-                key:'type',
-                value:'text'
-              },
-              {
-                key:'name',
-                value:'textInput'
-              }
-            ],
-            children:[]
-          },
-          {
-            element:'button',
-            id:'submit',
-            properties:[
-              {
-                key:'innerText',
-                value:'Submit'
-              }
-            ],
-            children:[]
-          }
-        ]
-      }
-    ]
-  }
-]
+const domData=
+{
+  element:'div',
+  id:'test',
+  properties:[],
+  children:[
+    {
+      element:'form',
+      id:'testForm',
+      properties:[],
+      children:[
+        {
+          element:'label',
+          id:'textLabel',
+          properties:[
+            {
+              key:'for',
+              value:'textInput'
+            }
+          ],
+          children:[]
+        },
+        {
+          element:'input',
+          id:'formText',
+          properties:[
+            {
+              key:'type',
+              value:'text'
+            },
+            {
+              key:'name',
+              value:'textInput'
+            }
+          ],
+          children:[]
+        },
+        {
+          element:'button',
+          id:'submit',
+          properties:[
+            {
+              key:'innerText',
+              value:'Submit'
+            }
+          ],
+          children:[]
+        }
+      ]
+    }
+  ]
+}
+const dm = new DomBuilder();
+const anchor = document.body
+anchor.appendChild(dm.buildElement(domData));
+
 ```
 
 ## Additional Notes
